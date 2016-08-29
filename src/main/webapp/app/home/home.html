@@ -1,0 +1,71 @@
+<div layout="row" layout-padding flex>
+    <md-sidenav id="form" md-component-id="transaccionForm" class="md-sidenav-left">
+        <form flex class="form" role="form" ng-submit="ctrl.saveTransaccion($event)" layout="column">
+            <jhi-alert-error></jhi-alert-error>
+            <md-input-container>
+                <label>Cantidad</label>
+                <input type="number" ng-model="ctrl.newTransaccion.cantidad">
+            </md-input-container>
+            <md-input-container>
+                <label>Descripcion</label>
+                <input type="text" ng-model="ctrl.newTransaccion.descripcion">
+            </md-input-container>
+            <md-input-container>
+                <label>Tipo de Moneda</label>
+                <md-select ng-model="ctrl.newTransaccion.tipoDeDinero">
+                    <md-option selected value="PESO_ARGENTINO">Peso Argentino</md-option>
+                    <md-option value="PESO_URUGUAYO">Peso Uruguayo</md-option>
+                    <md-option value="DOLAR">Dolar</md-option>
+                </md-select>
+            </md-input-container>
+            <md-button type="submit" class="md-primary md-raised" ng-disabled="ctrl.validateNewTransaccion()"> Save </md-button>
+        </form>
+    </md-sidenav>
+    <div layout="column" flex>
+        <md-table-container>
+            <table md-table multiple>
+                <thead md-head>
+                    <tr md-row>
+                        <th md-column>Fecha</th>
+                        <th md-column>Hora</th>
+                        <th md-column>Descripcion</th>
+                        <th md-column md-numeric>ARS $</th>
+                        <th md-column md-numeric>UY $</th>
+                        <th md-column md-numeric>USD $</th>
+                        <th md-column>Borrar</th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr md-row ng-repeat="transaccion in transaccions | orderBy:'-date'">
+                        <td md-cell>{{ transaccion.date | date:'LLLL d, y'}}</td>
+                        <td md-cell>{{ transaccion.date | date:'H:mm'}}</td>
+                        <td md-cell>{{ transaccion.descripcion }}</td>
+                        <td md-cell>{{ ctrl.parseIfIsArgentino(transaccion) }}</td>
+                        <td md-cell>{{ ctrl.parseIfIsUruguayo(transaccion) }}</td>
+                        <td md-cell>{{ ctrl.parseIfIsDolar(transaccion) }}</td>
+                        <td md-cell>
+                            <md-button flex class="md-primary md-hue-1" aria-label="borrar" ng-click="ctrl.removeTransaccion(transaccion.id)">Borrar</md-button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+    </div>
+</div>
+<md-fab-speed-dial md-open="ctrl.isOpen" md-direction="left" class="md-fling fixed-right-button">
+    <md-fab-trigger>
+        <md-button aria-label="menu" class="md-fab">
+            <md-icon md-svg-src="add"></md-icon>
+        </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+        <md-button aria-label="ingreso" class="md-fab md-raised md-mini" ng-click="ctrl.openIngreso()">
+            <md-tooltip>Ingreso</md-tooltip>
+            <md-icon md-svg-src="archive" aria-label="Ingreso"></md-icon>
+        </md-button>
+        <md-button aria-label="egreso" class="md-fab md-raised md-mini" ng-click="ctrl.openEgreso()">
+            <md-tooltip>Egreso</md-tooltip>
+            <md-icon md-svg-src="unArchive" aria-label="Egreso"></md-icon>
+        </md-button>
+    </md-fab-actions>
+</md-fab-speed-dial>

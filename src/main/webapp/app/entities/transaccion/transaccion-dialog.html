@@ -1,0 +1,79 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTransaccionLabel">Create or edit a Transaccion</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.transaccion.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_cantidad">Cantidad</label>
+            <input type="number" class="form-control" name="cantidad" id="field_cantidad"
+                    ng-model="vm.transaccion.cantidad"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_tipoDeDinero">TipoDeDinero</label>
+            <select class="form-control" name="tipoDeDinero" ng-model="vm.transaccion.tipoDeDinero" id="field_tipoDeDinero">
+                <option value="PESO_ARGENTINO" translate="registroApp.TipoDeDinero.PESO_ARGENTINO">PESO_ARGENTINO</option>
+                <option value="PESO_URUGUAYO" translate="registroApp.TipoDeDinero.PESO_URUGUAYO">PESO_URUGUAYO</option>
+                <option value="DOLAR">DOLAR</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_tipoDeTransaccion">TipoDeTransaccion</label>
+            <select class="form-control" name="tipoDeTransaccion" ng-model="vm.transaccion.tipoDeTransaccion" id="field_tipoDeTransaccion">
+                <option value="EGRESO">EGRESO</option>
+                <option value="INGRESO">INGRESO</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_descripcion">Descripcion</label>
+            <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                    ng-model="vm.transaccion.descripcion"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_date">Date</label>
+                <div class="input-group">
+                    <input id="field_date" type="text" class="form-control" name="date" datetime-picker="{{dateformat}}" ng-model="vm.transaccion.date" is-open="vm.datePickerOpenStatus.date"
+                    required  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.date.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.date.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.date.$error.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_user">user</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.transaccion.user" ng-options="user as user.login for user in vm.users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

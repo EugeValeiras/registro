@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_7LK9IAmWEeaYqaRqn1lxcQ" name="model">
+  <eAnnotations xmi:id="_7LK9IQmWEeaYqaRqn1lxcQ" source="genmymodel">
+    <details xmi:id="_7LK9IgmWEeaYqaRqn1lxcQ" key="uuid" value="_SXqXEAmFEeaYqaRqn1lxcQ"/>
+    <details xmi:id="_7LK9IwmWEeaYqaRqn1lxcQ" key="author" value="EugeValeiras"/>
+  </eAnnotations>
+  <packageImport xmi:id="_7LK9JAmWEeaYqaRqn1lxcQ">
+    <eAnnotations xmi:id="_7LK9JQmWEeaYqaRqn1lxcQ" source="genmymodel">
+      <details xmi:id="_7LK9JgmWEeaYqaRqn1lxcQ" key="uuid" value="_SXszUAmFEeaYqaRqn1lxcQ"/>
+    </eAnnotations>
+    <importedPackage href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#/"/>
+  </packageImport>
+  <packageImport xmi:id="_7LK9JwmWEeaYqaRqn1lxcQ">
+    <eAnnotations xmi:id="_7LK9KAmWEeaYqaRqn1lxcQ" source="genmymodel">
+      <details xmi:id="_7LK9KQmWEeaYqaRqn1lxcQ" key="uuid" value="_SX0vIAmFEeaYqaRqn1lxcQ"/>
+    </eAnnotations>
+    <importedPackage href="pathmap://GENMYMODEL_LIBRARIES/GenMyModelPrimitiveTypes.library.uml#/"/>
+  </packageImport>
+  <packagedElement xsi:type="uml:Class" xmi:id="_7LK9KgmWEeaYqaRqn1lxcQ" name="Transaccion">
+    <eAnnotations xmi:id="_7LK9KwmWEeaYqaRqn1lxcQ" source="genmymodel">
+      <details xmi:id="_7LK9LAmWEeaYqaRqn1lxcQ" key="uuid" value="_QdNl0euzEDO9oZImblzdmg"/>
+    </eAnnotations>
+    <ownedAttribute xmi:id="_7LK9LQmWEeaYqaRqn1lxcQ" name="cantidad" visibility="private">
+      <eAnnotations xmi:id="_7LK9LgmWEeaYqaRqn1lxcQ" source="genmymodel">
+        <details xmi:id="_7LK9LwmWEeaYqaRqn1lxcQ" key="uuid" value="_uc8I8OuzEDO9oZImblzdmg"/>
+      </eAnnotations>
+      <type xsi:type="uml:PrimitiveType" href="pathmap://GENMYMODEL_LIBRARIES/GenMyModelPrimitiveTypes.library.uml#//Long"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_7LK9MAmWEeaYqaRqn1lxcQ" name="tipoDeDinero" visibility="private" type="_7LK9MwmWEeaYqaRqn1lxcQ">
+      <eAnnotations xmi:id="_7LK9MQmWEeaYqaRqn1lxcQ" source="genmymodel">
+        <details xmi:id="_7LK9MgmWEeaYqaRqn1lxcQ" key="uuid" value="_xFCj4OvEEDOzX_3yZ81k7w"/>
+      </eAnnotations>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Enumeration" xmi:id="_7LK9MwmWEeaYqaRqn1lxcQ" name="TipoDeDinero">
+    <eAnnotations xmi:id="_7LK9NAmWEeaYqaRqn1lxcQ" source="genmymodel">
+      <details xmi:id="_7LK9NQmWEeaYqaRqn1lxcQ" key="uuid" value="_lPTsAOvEEDOzX_3yZ81k7w"/>
+    </eAnnotations>
+    <ownedLiteral xmi:id="_7LK9NgmWEeaYqaRqn1lxcQ" name="PESO_ARGENTINO" classifier="_7LK9MwmWEeaYqaRqn1lxcQ">
+      <eAnnotations xmi:id="_7LK9NwmWEeaYqaRqn1lxcQ" source="genmymodel">
+        <details xmi:id="_7LK9OAmWEeaYqaRqn1lxcQ" key="uuid" value="_m-TkcOvEEDOzX_3yZ81k7w"/>
+      </eAnnotations>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_7LK9OQmWEeaYqaRqn1lxcQ" name="PESO_URUGUAYO" classifier="_7LK9MwmWEeaYqaRqn1lxcQ">
+      <eAnnotations xmi:id="_7LK9OgmWEeaYqaRqn1lxcQ" source="genmymodel">
+        <details xmi:id="_7LK9OwmWEeaYqaRqn1lxcQ" key="uuid" value="_ogXNEOvEEDOzX_3yZ81k7w"/>
+      </eAnnotations>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_7LK9PAmWEeaYqaRqn1lxcQ" name="DOLAR" classifier="_7LK9MwmWEeaYqaRqn1lxcQ">
+      <eAnnotations xmi:id="_7LK9PQmWEeaYqaRqn1lxcQ" source="genmymodel">
+        <details xmi:id="_7LK9PgmWEeaYqaRqn1lxcQ" key="uuid" value="_qPVQUOvEEDOzX_3yZ81k7w"/>
+      </eAnnotations>
+    </ownedLiteral>
+  </packagedElement>
+</uml:Model>

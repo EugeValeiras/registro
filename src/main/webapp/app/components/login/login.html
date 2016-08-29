@@ -1,0 +1,51 @@
+<md-content flex layout="column" layout-padding>
+
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Sign in</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="vm.cancel()">
+          <md-icon md-svg-src="close-white" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <div layout="row">
+
+        <div flex="55" layout="column">
+            
+            <form class="form" role="form" ng-submit="vm.login($event)" layout="column">
+                <md-input-container flex>
+                    <label for="username">Login</label>
+                    <input type="text" id="username" placeholder="Username" ng-model="vm.username">
+                </md-input-container>
+                <md-input-container flex>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="password"  ng-model="vm.password">
+                </md-input-container>
+                <md-checkbox ng-model="vm.rememberMe" checkedaria-label="string">
+                    <span> Remember me </span>
+                </md-checkbox>
+                <md-button type="submit" class="md-raised md-primary" aria-label="Submit"> Sign In </md-button>
+            </form>
+            
+        </div>
+
+        <div flex layout="column">
+            <br>
+            <jh-social ng-provider="google"></jh-social>
+            <jh-social ng-provider="facebook"></jh-social>
+            <jh-social ng-provider="twitter"></jh-social>
+        </div>
+
+    </div>
+    
+    <div layout="column" layout-align="start start">
+        <md-button class="md-primary" ng-click="vm.requestResetPassword()"> Did you forget your password? </md-button>
+        <span> 
+            You don't have an account yet? 
+            <md-button class="md-primary" ng-click="vm.register()"> Register a new account </md-button> 
+        </span>
+    </div>
+
+</md-content>

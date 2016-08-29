@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+<div>
+    <h2>Transaccions</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="transaccion.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Transaccion
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Cantidad</span></th>
+                    <th><span>TipoDeDinero</span></th>
+                    <th><span>TipoDeTransaccion</span></th>
+                    <th><span>Descripcion</span></th>
+                    <th><span>Date</span></th>
+                    <th><span>user</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="transaccion in vm.transaccions track by transaccion.id">
+                    <td><a ui-sref="transaccion-detail({id:transaccion.id})">{{transaccion.id}}</a></td>
+                    <td>{{transaccion.cantidad}}</td>
+                    <td translate="{{'registroApp.TipoDeDinero.' + transaccion.tipoDeDinero}}">{{transaccion.tipoDeDinero}}</td>
+                    <td translate="{{'registroApp.TipoDeTransaccion.' + transaccion.tipoDeTransaccion}}">{{transaccion.tipoDeTransaccion}}</td>
+                    <td>{{transaccion.descripcion}}</td>
+                    <td>{{transaccion.date | date:'medium'}}</td>
+                    <td>
+                        {{transaccion.user.login}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="transaccion-detail({id:transaccion.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="transaccion.edit({id:transaccion.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="transaccion.delete({id:transaccion.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

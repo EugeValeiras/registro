@@ -1,0 +1,63 @@
+{
+  "version": "0.0.0",
+  "name": "registro",
+  "appPath": "src/main/webapp/",
+  "testPath": "src/test/javascript/spec",
+  "dependencies": {
+    "angular": "1.5.2",
+    "angular-aria": "1.5.2",
+    "angular-resource": "1.5.2",
+    "angular-sanitize": "1.5.2",
+    "angular-translate": "2.11.0",
+    "angular-translate-interpolation-messageformat": "2.11.0",
+    "angular-translate-loader-partial": "2.11.0",
+    "angular-translate-storage-cookie": "2.11.0",
+    "angular-ui-router": "0.2.18",
+    "angular-cache-buster": "0.4.3",
+    "angular-cookies": "1.5.2",
+    "angular-dynamic-locale": "0.1.30",
+    "angular-i18n": "1.5.2",
+    "angular-bootstrap": "1.2.5",
+    "angular-material": "1.0.7",
+    "angular-loading-bar": "0.9.0",
+    "bootstrap-ui-datetime-picker": "2.2.3",
+    "material-design-icons": "^2.2.3",
+    "ngstorage": "0.3.10",
+    "jquery": "2.2.2",
+    "json3": "3.3.2",
+    "modernizr": "3.3.1",
+    "ng-file-upload": "12.0.4",
+    "ngInfiniteScroll": "1.2.2",
+    "swagger-ui": "2.1.4",
+    "angular-material-data-table": "^0.10.8"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.5.2",
+    "angular-scenario": "1.5.2"
+  },
+  "overrides": {
+    "angular": {
+      "dependencies": {
+        "jquery": "2.2.2"
+      }
+    },
+    "material-design-icons": {
+      "main": [
+        "iconfont/material-icons.css"
+      ]
+    },
+    "messageformat": {
+      "main": [
+        "messageformat.js",
+        "locale/es.js",
+        "locale/en.js"
+      ]
+    }
+  },
+  "resolutions": {
+    "angular": "1.5.2",
+    "angular-cookies": "1.5.2",
+    "angular-material": "1.0.7",
+    "jquery": "2.2.2"
+  }
+}

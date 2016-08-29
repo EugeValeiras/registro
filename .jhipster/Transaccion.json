@@ -1,0 +1,45 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "cantidad",
+            "fieldType": "Long"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "tipoDeDinero",
+            "fieldType": "TipoDeDinero",
+            "fieldValues": "PESO_ARGENTINO,PESO_URUGUAYO,DOLAR"
+        },
+        {
+            "fieldName": "tipoDeTransaccion",
+            "fieldType": "TipoDeTransaccion",
+            "fieldValues": "EGRESO,INGRESO"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160423210417",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "transaccion",
+    "pagination": "no"
+}

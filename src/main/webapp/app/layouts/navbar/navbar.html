@@ -1,0 +1,120 @@
+<div class="md-toolbar-tools">
+    <h2><a class="navbar-brand" href="#/"><span>Registro de Caja</span></a></h2>
+    <span flex="5"></span>
+    <h5><span>Pesos Argentinos: $ {{pesosArgentinos}}</span></h5>
+    <span flex="5"></span>
+    <h5><span>Pesos Uruguayos: U$ {{pesosUruguayos}}</span></h5>
+    <span flex="5"></span>
+    <h5><span>Dolares: U$D {{dolares}}</span></h5>
+    <span flex></span>
+    <md-button ui-sref="home" ui-sref-active="active" ng-click="ctrl.navCollapsed = true" class="md-raised" aria-label="Home">
+        Home
+    </md-button>
+    <md-menu has-authority="ROLE_ADMIN" ui-sref-active="active" md-position-mode="target-right target">
+        <md-button aria-label="Dashboard" class="md-raised" md-position-mode="target-right target" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+            Dashboard
+        </md-button>
+        <md-menu-content width="4">
+            <md-menu-item>
+                <md-button ui-sref="transaccion">
+                    <md-icon aria-label="Settings" md-svg-src="settings"> settings </md-icon>
+                    <span>Transaccion</span>
+                </md-button>
+            </md-menu-item>
+            <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
+        </md-menu-content>
+    </md-menu>
+    <md-menu ng-switch="ctrl.isAuthenticated()" md-position-mode="target-right target">
+        <md-button aria-label="Open account interactions menu" class="md-raised" md-position-mode="target-right target" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+            Account
+        </md-button>
+        <md-menu-content width="4">
+            <md-menu-item ng-switch-when="true">
+                <md-button ui-sref="settings">
+                    <md-icon aria-label="Settings" md-svg-src="settings"> settings </md-icon>
+                    <span> Settings </span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-switch-when="true" ui-sref="password">
+                <md-button ng-click="ctrl.redial($event)">
+                    <md-icon aria-label="Password" md-svg-src="lock"> lock </md-icon>
+                    <span> Change password </span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-switch-when="true" ui-sref="sessions">
+                <md-button ng-click="ctrl.checkVoicemail()">
+                    <md-icon aria-label="Sessions" md-svg-src="face"> face </md-icon>
+                    <span> Sessions </span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-divider ng-switch-when="true"></md-menu-divider>
+            <md-menu-item ng-switch-when="true">
+                <md-button ng-click="ctrl.logout()">
+                    <md-icon aria-label="Sign out" md-svg-src="power_settings_new"> power_settings_new </md-icon>
+                    <span> Sign out </span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-switch-when="false">
+                <md-button ng-click="ctrl.login()">
+                    <md-icon aria-label="Sign In" md-svg-src="input"> input </md-icon>
+                    <span> Sign in </span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-switch-when="false" ui-sref="register">
+                <md-button ng-click="ctrl.redial($event)">
+                    <md-icon aria-label="Register" md-svg-src="launch"> launch </md-icon>
+                    <span> Register </span>
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+    <md-menu has-authority="ROLE_ADMIN" ui-sref-active="active" md-position-mode="target-right target">
+        <md-button class="md-raised" md-position-mode="target-right target" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+            Administration
+        </md-button>
+        <md-menu-content width="4">
+            <md-menu-item>
+                <md-button ui-sref="user-management">
+                    <md-icon aria-label="User Managment" md-svg-src="settings"> settings </md-icon>
+                    <span> User management </span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ui-sref="jhi-metrics">
+                    <md-icon aria-label="Metrics" md-svg-src="settings"> settings </md-icon>
+                    <span> Metrics </span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ui-sref="jhi-health">
+                    <md-icon aria-label="Health" md-svg-src="settings"> settings </md-icon>
+                    <span> Health </span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ui-sref="jhi-configuration">
+                    <md-icon aria-label="Configuration" md-svg-src="settings"> settings </md-icon>
+                    <span> Configuration </span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ui-sref="audits">
+                    <md-icon aria-label="Audits" md-svg-src="settings"> settings </md-icon>
+                    <span> Audits </span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-hide="ctrl.inProduction">
+                <md-button ui-sref="logs">
+                    <md-icon aria-label="Logs" md-svg-src="settings"> settings </md-icon>
+                    <span> Logs </span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ui-sref="docs">
+                    <md-icon aria-label="API" md-svg-src="settings"> settings </md-icon>
+                    <span> API </span>
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</div>
